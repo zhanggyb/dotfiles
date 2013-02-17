@@ -1,0 +1,12 @@
+# File name:
+#	.alias
+#
+# loaded in .bashrc
+
+alias l="ls"
+alias ll="ls -l"
+
+alias rm="rm -i"
+alias mv="mv -i"
+alias cp="cp -i"
+
