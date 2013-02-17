@@ -32,7 +32,6 @@ test -s ~/.alias && . ~/.alias || true
 
 APP_DIR=$HOME/Apps
 export PATH=$PATH:${APP_DIR}/bin
-export LD_LIBRARY_PATH=${APP_DIR}/lib:${APP_DIR}/lib64
 
 # Sun Java
 #JAVA_HOME=${APP_DIR}/java
@@ -41,3 +40,25 @@ export LD_LIBRARY_PATH=${APP_DIR}/lib:${APP_DIR}/lib64
 # To support IBus Input Method in LibreOffice
 export OOO_FORCE_DESKTOP=gnome
 
+# For development
+#
+
+# pkg-config
+export PKG_CONFIG_PATH=${APP_DIR}/lib/pkgconfig:${APP_DIR}/lib64/pkgconfig
+
+C_INCLUDE_PATH=${APP_DIR}/include
+export C_INCLUDE_PATH
+
+CPLUS_INCLUDE_PATH=${APP_DIR}/include
+export CPLUS_INCLUDE_PATH
+
+# static libraries
+LIBRARY_PATH=${APP_DIR}/lib:${APP_DIR}/lib64
+export LIBRARY_PATH
+
+# dynamic libraries
+LD_LIBRARY_PATH=${APP_DIR}/lib:${APP_DIR}/lib64
+export LD_LIBRARY_PATH
+
+#export PS1="\W \$ "
+export PS1="\[$(tput bold)\]\[$(tput setaf 2)\]\W \\$ \[$(tput sgr0)\]"
