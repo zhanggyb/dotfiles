@@ -4,8 +4,9 @@
 ! for urxvt
 !
 
-!urxvt.preeditType:Root
-!urxvt.inputMethod:ibus
+urxvt.preeditType:Root
+urxvt.inputMethod:ibus
+!urxvt.imFont:xft:WenQuanYi Micro Hei Mono
 
 ! color set
 urxvt.depth:32
