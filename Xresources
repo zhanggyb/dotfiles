@@ -12,7 +12,7 @@ urxvt.inputMethod:ibus
 urxvt.depth:32
 
 ! for real transparency (composite):
-urxvt.background:rgba:0000/0000/0000/f888
+urxvt.background:rgba:0000/0000/0000/dddd
 ! for fake transparency:
 !urxvt.transparent: true
 !urxvt.shading:30
@@ -45,6 +45,27 @@ urxvt*color13:     #e628ba
 urxvt*color14:     #7D7DFB
 urxvt*color15:     #ffffff
 
+! overwrite
+! http://blog.sina.com.cn/s/blog_4d2bb0b10100llmm.html
+urxvt.colorBD:yellow
+urxvt.colorUL:Green
+urxvt.color0: #000000
+urxvt.color1: #CC0000
+urxvt.color2: #4E9A06
+urxvt.color3: #C4A000
+urxvt.color4: #3465A4
+urxvt.color5: #75507B
+urxvt.color6: #06989A
+urxvt.color7: #D3D7CF
+urxvt.color8: #555753
+urxvt.color9: #EF2929
+urxvt.color10: #8AE234
+urxvt.color11: #FCE94F
+urxvt.color12: #729FCF
+urxvt.color13: #AD7FA8
+urxvt.color14: #34E2E2
+urxvt.color15: #EEEEEC
+
 ! font set
 urxvt.font:xft:Droid Sans Mono:size=11:style=Regular:antialias=true,xft:WenQuanYi Micro Hei Mono:size=11:style=Regular:antialias=true
 urxvt.boldfont:xft:Droid Sans Mono:size=11:style=bold:antialias=true,xft:WenQuanYi Micro Hei Mono:size=11:style=bold:antialias=true
@@ -60,14 +81,14 @@ urxvt.saveLines:5000
 
 ! window geometry set 
 urxvt.geometry:80x25
-!URxvt.title:Rxvt-Unicode
+!urxvt.title:Rxvt-Unicode
 urxvt*borderLess:false
 
 ! tabs
 ! urxvt.perl-ext-common:default,tabbed,matcher
+urxvt.perl-ext-common: default,tabbed,matcher
 
 ! external apps
 urxvt.urlLauncher:firefox
 urxvt.matcher.button:1
-urxvt.perl-ext-common:matcher
 
