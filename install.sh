@@ -4,4 +4,6 @@
 
 cp -f alias ~/.alias
 cp -f bashrc ~/.bashrc
+
 cp -f Xresources ~/.Xresources
+xrdb ~/.Xresources
