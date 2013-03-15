@@ -5,7 +5,7 @@
 !
 
 urxvt.preeditType:Root
-urxvt.inputMethod:ibus
+urxvt.inputMethod:fcitx
 !urxvt.imFont:xft:WenQuanYi Micro Hei Mono
 
 ! color set

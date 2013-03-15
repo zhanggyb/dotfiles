@@ -34,8 +34,8 @@ APP_DIR=$HOME/Apps
 export PATH=$PATH:${APP_DIR}/bin
 
 # Sun Java
-#JAVA_HOME=${APP_DIR}/java
-#export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
+JAVA_HOME=${APP_DIR}/java
+export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
 
 # To support IBus Input Method in LibreOffice
 export OOO_FORCE_DESKTOP=gnome
@@ -62,3 +62,4 @@ export LD_LIBRARY_PATH
 
 #export PS1="\W \$ "
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\]\W \\$ \[$(tput sgr0)\]"
+
