@@ -1,5 +1,4 @@
 # File name:
-#	.alias
 #
 # loaded in .bashrc
 
@@ -11,3 +10,5 @@ alias mv="mv -i"
 alias cp="cp -i"
 
 alias ut="urxvt"
+alias vi="vim"
+

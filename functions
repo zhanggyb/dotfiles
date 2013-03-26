@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+#
+
+# global variables
+DISTRO=""
+
+#
+detect_distro() {
+  if [ -f /etc/debian_version ]; then
+    DISTRO="Debian"
+  elif [ -f /etc/redhat-release ]; then
+    if grep Fedora /etc/redhat-release 1>/dev/null 2>&1; then
+      DISTRO="Fedora"
+    else
+      DISTRO="Redhat"
+    fi
+  elif [ -f /etc/SuSE-release ]; then
+    DISTRO="SuSE"
+  elif [ -f /etc/arch-release ]; then
+    DISTRO="ARCH"
+  fi
+}
+
