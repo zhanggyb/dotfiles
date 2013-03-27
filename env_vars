@@ -7,8 +7,13 @@ export EDITOR=/usr/bin/vim
 # For some news readers it makes sense to specify the NEWSSERVER variable here
 #export NEWSSERVER=your.news.server
 
+if [ $DISTRO = "Fedora" ]
+then
+APP_DIR=$HOME/.local	# no need to export, is set in Fedora 18
+else
 APP_DIR=$HOME/Apps
 export PATH=$PATH:${APP_DIR}/bin
+fi
 
 # Sun Java
 JAVA_HOME=${APP_DIR}/java
