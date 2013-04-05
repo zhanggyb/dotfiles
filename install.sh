@@ -5,7 +5,7 @@
 DIST=$HOME/.config/shell
 FONT_CONFIG_DIR=$HOME/.config/fontconfig
 
-if [ ! -d $DIST ];
+if [ ! -d $DIST ]
 then
 	mkdir -p $DIST || (echo "Fail to create $DIST! Abort."; exit 1)
 fi
@@ -24,4 +24,13 @@ then
 fi
 
 cp -f fonts.conf $FONT_CONFIG_DIR
+
+# copy my favorite gnome themes
+
+if [ ! -d ~/.themes ]
+then
+	mkdir -p ~/.themes || (echo "Fail to create ~/.themes! Abort."; exit 1)
+fi
+
+cp -r themes/* ~/.themes
 

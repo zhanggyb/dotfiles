@@ -1,0 +1,318 @@
+/* Activities Overview
+---------------------------------------------*/
+
+#panelActivities:overview {
+    text-shadow: 0 0 3px #ccc;
+}
+
+#overview {
+    background-image: url("img/olhg.png");
+    background-size: cover;
+    background-repeat: repeat;
+    spacing: 20px;
+}
+
+#viewSelector {
+    spacing: 20px;
+    padding-top: 25px;
+}
+
+/* Workspaces */
+
+.workspace-controls {
+    visible-width: 32px;
+}
+
+.workspace-thumbnails-background {
+    background: #425265 url("img/lock-screen-bg.png");
+    background-repeat: repeat;
+    box-shadow: 0 0 10px black;
+    border: 10px solid transparent;
+    padding: 9px;
+}
+
+.workspace-thumbnails-background:ltr {
+    border-right: none;
+    border-radius: 15px 0 0 15px;
+}
+
+.workspace-thumbnails-background:rtl {
+    border-left: none;
+    border-radius: 0 15px 15px 0;
+}
+
+.workspace-thumbnails {
+    spacing: 9px;
+}
+
+.workspace-thumbnail-indicator {
+    outline: 1px solid #ccc;
+}
+
+/* Windows */
+
+.window-caption {
+    background: #425265 url("img/lock-screen-bg.png");
+    background-repeat: repeat;
+    border: 1px solid transparent;
+    box-shadow: 0 0 3px black;
+    border-radius: 3px;
+    padding: 8px 10px 5px;
+    spacing: 25px;
+    -shell-caption-spacing: -2px;
+}
+
+.window-close {
+    background: #6a6a6a url("img/schliessen.png");
+    background-repeat: repeat;
+    height: 32px;
+    width: 32px;
+    -shell-close-overlap: 18px;
+    border: 0px solid transparent;
+    border-radius: 16px;
+    box-shadow: 0 0 5px black;
+    transition-duration: 200;
+}
+
+.window-close:hover {
+    background: #b51f1f url("img/schliessen.png");
+    transition-duration: 200;
+}
+
+.window-close:active {
+    background: #b51f1f url("img/schliessen.png");
+    transition-duration: 200;
+    box-shadow: 0 0 5px white;
+}
+
+.notification-close {
+    background: #6a6a6a url("img/schliessen.png");
+    background-repeat: repeat;
+    height: 32px;
+    width: 32px;
+    border: 0px solid transparent;
+    border-radius: 16px;
+    box-shadow: 0 0 5px black;
+    -shell-close-overlap: 18px;
+}
+
+.notification-close:hover {
+    background: #b51f1f url("img/schliessen.png");
+    transition-duration: 200;
+}
+
+.notification-close:active {
+    background: #b51f1f url("img/schliessen.png");
+    transition-duration: 200;
+    box-shadow: 0 0 5px white;
+}
+
+/* Dash */
+
+#dash {
+    background: #425265 url("img/lock-screen-bg.png");
+    background-repeat:repeat;
+    box-shadow: 0 0 10px black;
+    border: 10px solid transparent;
+    padding: 4px 6px 5px;
+}
+
+#dash:ltr {
+    border-left: none;
+    border-radius: 0 15px 15px 0;
+}
+
+#dash:rtl {
+    border-right: none;
+    border-radius: 15px 0 0 15px;
+}
+
+.dash-label {
+    background: #425265 url("img/lock-screen-bg.png");
+    box-shadow: 0 0 5px black;
+    border-radius: 3px;
+    padding: 5px 10px;
+    -x-offset: 11px;
+}
+
+/* Search box */
+
+#searchEntry {
+    width: 300px;
+    padding: .45em .8em;
+}
+
+.search-entry-icon {
+    icon-size: 1.09em;
+    color: #ccc;
+}
+
+/* Search results */
+
+#searchResults {
+    spacing: 12px;
+}
+
+#searchResults:ltr {
+    padding-right: 32px;
+}
+
+#searchResults:rtl {
+    padding-left: 32px;
+}
+
+#searchResultsContent {
+    spacing: 36px;
+}
+
+#searchResultsContent:ltr {
+    padding-right: 20px;
+}
+
+#searchResultsContent:rtl {
+    padding-left: 20px;
+}
+
+.search-section-header {
+    width: 400px;
+    background-gradient-direction: horizontal;
+    background-gradient-start: rgba(66,82,101,0.75);
+    background-gradient-end: rgba(66,82,101,0);
+    border-radius: 3px;
+    padding: .5em .9em .45em .9em;
+    font-size: .9em;
+    spacing: 4px;
+}
+
+.search-statustext {
+    padding: .4em .8em;
+    spacing: 4px;
+}
+
+.search-section-results {
+    padding-top: 12px;
+}
+
+.search-section-list-results {
+    spacing: 4px;
+}
+
+.results-container {
+    spacing: 4px;
+}
+
+/* App grid */
+
+.icon-grid {
+    padding: 0em .8em;
+    spacing: 36px;
+    -shell-grid-horizontal-item-size: 100px;
+    -shell-grid-vertical-item-size: 100px;
+}
+
+.icon-grid .overview-icon {
+    icon-size: 64px;
+}
+
+.all-app {
+    spacing: 20px;
+}
+
+.all-app:ltr {
+    padding-right: 20px;
+}
+
+.all-app:rtl {
+    padding-left: 20px;
+}
+
+/* App filter */
+
+.app-filter {
+    width: 200px;
+    border: 5px solid transparent;
+    border-radius: 3px;
+    padding: .45em .8em;
+    font-weight: bold;
+    color: #ccc;
+}
+
+.app-filter:hover,
+.app-filter:focus {
+    background: #898989 url("img/lock-screen-bg.png");
+    background-repeat: repeat;
+    box-shadow: 0 0 5px black;
+    border-radius: 10px;
+    color: white;
+}
+
+.app-filter:selected {
+    background: #425265 url("img/lock-screen-bg.png");
+    background-repeat: repeat;
+    box-shadow: 0 0 5px black;
+    border-radius: 10px;
+    color: white;
+}
+
+/* Apps */
+
+.show-apps,
+.dash-item-container > .app-well-app {
+    padding: 4px 2px 3px;
+}
+
+.show-apps > .overview-icon,
+.app-well-app > .overview-icon,
+.search-result-content > .overview-icon{
+    border-radius: 4px;
+    padding: 3px;
+    border: 1px solid transparent;
+    text-align: center;
+    spacing: 1px;
+}
+
+.show-apps:hover > .overview-icon,
+.show-apps:focus > .overview-icon,
+.show-apps:checked > .overview-icon,
+.app-well-app:hover > .overview-icon,
+.app-well-app:focus > .overview-icon,
+.app-well-app:selected > .overview-icon,
+.remove-favorite:hover > .overview-icon,
+.search-result-content:hover > .overview-icon,
+.search-result-content:focus > .overview-icon,
+.search-result-content:selected > .overview-icon {
+    background: #898989 url("img/lock-screen-bg.png");
+    background-repeat: repeat;
+    box-shadow: 0 0 5px black;
+}
+
+.app-well-app.running > .overview-icon {
+    background: #777 url("img/lock-screen-bg.png");
+    background-repeat: repeat;
+    box-shadow: 0 0 5px black;
+}
+
+.app-well-app.running:hover > .overview-icon,
+.app-well-app.running:focus > .overview-icon,
+.app-well-app.running:selected > .overview-icon {
+    background: #898989 url("img/lock-screen-bg.png");
+}
+
+.show-apps .show-apps-icon {
+    color: #ccc;
+}
+
+.show-apps:hover .show-apps-icon,
+.show-apps:focus .show-apps-icon,
+.show-apps:checked .show-apps-icon {
+    color: #fff;
+}
+
+.show-apps:checked > .overview-icon {
+    box-shadow: inset 0 1px 2px black;
+}
+
+.app-well-menu {
+    -boxpointer-gap: 3px;
+}
+

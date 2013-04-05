@@ -1,0 +1,446 @@
+/* Popup Menus
+---------------------------------------------*/
+
+.popup-menu {
+    min-width: 200px;
+}
+
+.popup-sub-menu StScrollBar {
+    padding: 4px;
+}
+
+.popup-sub-menu {
+    background: #555 url("img/lock-screen-bg.png");
+    background-repeat: repeat;
+    background-position: 0 0;
+    padding-top: 1px;
+    padding-left: -6px;
+    padding-right: -6px;
+    border: 5px solid transparent;
+    box-shadow: 0 0 5px black;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.popup-combo-menu {
+    background: #555 url("img/lock-screen-bg.png");
+    background-repeat: repeat;
+    box-shadow: 0 0 5px black;
+    padding: 1px;
+}
+
+.popup-menu-content {
+    background: #425265 url("img/lock-screen-bg.png");
+    background-repeat: repeat;
+    background-position: 0 0;
+    box-shadow: 0 0 10px black;
+    border: 0px solid transparent;
+    border-radius: 5px;
+    padding: .5em 1px;
+}
+
+/* Menu items */
+
+.popup-menu-item {
+    padding: .45em 1.5em;
+    spacing: 1em;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-radius: 10px 10px 0 0;
+    color: #eee;
+}
+
+.popup-menu-item:insensitive {
+    color: #aaa;
+}
+
+.popup-menu-item:active {
+    transition-duration: 200;
+    color: white;
+    text-shadow: 0 0 5px #ccc;
+}
+
+.popup-submenu-menu-item:open {
+    color: white;
+    text-shadow: 0 0 3px #ccc;
+}
+
+.popup-submenu-menu-item {
+    border-top: 1px solid transparent;
+}
+
+.popup-combobox-item {
+    spacing: 1em;
+}
+
+.popup-separator-menu-item {
+    -gradient-height: 2px;
+    -gradient-start: rgba(119,119,119,0.65);
+    -gradient-end: rgba(119,119,119,0.325);
+    -margin-horizontal: 0;
+    height: 1px;
+}
+
+.popup-alternating-menu-item:alternate {
+    font-weight: bold;
+}
+
+.popup-slider-menu-item {
+    height: 1em;
+    min-width: 15em;
+    -slider-height: .4em;
+    -slider-border-color: #373737;
+    -slider-background-color: #444;
+    -slider-active-background-color: rgba(255,255,255,0.3);
+    -slider-active-border-color: rgba(255,255,255,0.25);
+    -slider-border-width: 2px;
+    -slider-handle-radius: .45em;
+}
+
+.popup-menu-item:hover .popup-slider-menu-item {
+    -slider-background-color: #555;
+    -slider-active-background-color: #c8d2de;
+    -slider-active-border-color: #b0bbca;
+}
+
+.popup-device-menu-item {
+    spacing: .5em;
+}
+
+.popup-inactive-menu-item,
+.popup-inactive-menu-item:insensitive {
+    color: #fff;
+}
+
+.popup-subtitle-menu-item,
+.popup-subtitle-menu-item:insensitive {
+    font-weight: bold;
+}
+
+.popup-menu-icon {
+    icon-size: 1.09em;
+}
+
+.nm-menu-item-icons {
+    spacing: .5em;
+}
+
+/* Toggle switches */
+
+.toggle-switch {
+    width: 65px;
+    height: 22px;
+}
+
+.toggle-switch-us {
+    background-image: url("img/aus.png");
+    transition-duration: 200;
+}
+
+.popup-menu-item:hover .toggle-switch-us {
+    background-image: url("img/aus-maus.png");
+    transition-duration: 200;
+}
+
+.toggle-switch-us:checked {
+    background-image: url("img/an.png");
+    transition-duration: 200;
+}
+
+.popup-menu-item:hover .toggle-switch-us:checked {
+    background-image: url("img/an-maus.png");
+    transition-duration: 200;
+}
+
+.toggle-switch-intl {
+    background-image: url("img/aus.png");
+    transition-duration: 200;
+}
+
+.popup-menu-item:hover .toggle-switch-intl {
+    background-image: url("img/aus-maus.png");
+    transition-duration: 200;
+}
+
+.toggle-switch-intl:checked {
+    background-image: url("img/an.png");
+    transition-duration: 200;
+}
+
+.popup-menu-item:hover .toggle-switch-intl:checked {
+    background-image: url("img/an-maus.png");
+    transition-duration: 200;
+}
+
+/* Status chooser */
+
+.status-chooser {
+    spacing: .5em;
+    padding: .5em 1.5em;
+}
+
+.status-chooser .popup-menu-item {
+    padding-left: .45em;
+    padding-right: .45em;
+}
+
+.status-chooser-user-icon {
+    border-radius: 3px;
+    width: 64px;
+    height: 64px;
+    box-shadow: 0 0 5px black;
+}
+
+.status-chooser-user-icon:hover {
+    box-shadow: 0 0 3px white;
+    transition-duration: 200;
+}
+
+.status-chooser-user-name {
+    min-width: 9em;
+    font-weight: bold;
+}
+
+.status-chooser-combo {
+    border-radius: 2px;
+}
+
+.status-chooser-combo .popup-combo-menu {
+    background: #777 url("img/lock-screen-bg.png");
+    background-repeat: repeat;
+    border-radius: 3px;
+    padding: 1px;
+}
+
+.status-chooser-combo .popup-menu-item {
+    padding-left: .45em;
+    padding-right: .45em;
+}
+
+.status-chooser-status-item,
+.status-chooser-combo .popup-combobox-item {
+    spacing: 4px;
+}
+
+/* Calendar Popup
+---------------------------------------------*/
+
+#calendarEventsArea {
+    min-width: 220px;
+}
+
+.calendar-vertical-separator {
+    -stipple-width: 0px;
+    -stipple-color: transparent;
+    width: 3px;
+}
+
+.calendar {
+    padding: 0 1.5em .45em;
+    spacing-rows: 0;
+    spacing-columns: 0;
+}
+
+.calendar-month-label {
+    padding: 1.6em 0;
+    color: #ccc;
+}
+
+.calendar-change-month-back {
+    width: 22px;
+    height: 22px;
+    background-image: url("img/kal-l.png");
+}
+
+.calendar-change-month-back:hover,
+.calendar-change-month-back:active {
+    background-image: url("img/kal-l-m.png");
+}
+
+.calendar-change-month-back:rtl {
+    background-image: url("img/kal-r.png");
+}
+
+.calendar-change-month-back:rtl:hover,
+.calendar-change-month-back:rtl:active {
+    background-image: url("img/kal-r-m.png");
+}
+
+.calendar-change-month-forward {
+    width: 22px;
+    height: 22px;
+    background-image: url("img/kal-r.png");
+}
+
+.calendar-change-month-forward:hover,
+.calendar-change-month-forward:active {
+    background-image: url("img/kal-r-m.png");
+}
+
+.calendar-change-month-forward:rtl {
+    background-image: url("img/kal-l.png");
+}
+
+.calendar-change-month-forward:rtl:hover,
+.calendar-change-month-forward:rtl:active {
+    background-image: url("img/kal-l-m.png");
+}
+
+.datemenu-date-label {
+    padding: .45em 1.5em 0;
+    font-weight: bold;
+}
+
+.calendar-day-base {
+    text-align: center;
+    width: 2.6em;
+    height: 2.5em;
+    border-radius: 4px;
+}
+
+.calendar-day-base:hover {
+    color: white;
+    background: #898989 url("img/lock-screen-bg.png") !important;
+    background-repeat: repeat;
+    box-shadow: 0 0 5px black;
+    transition-duration: 200;
+    border: 1px solid transparent;
+}
+
+.calendar-day-base:active {
+    color: white;
+    background: #777 url("img/lock-screen-bg.png");
+    background-repeat: repeat;
+    box-shadow: 0 0 5px black;
+    border: 1px solid transparent;
+}
+
+.calendar-day-heading {
+    color: #999;
+    height: 1.6em;
+    border: 1px solid #556374;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+}
+
+.calendar-week-number {
+    color: #999;
+    padding-top: .75em;
+    height: 1em;
+    width: 1.2em;
+}
+
+.calendar-week-number:ltr {
+    text-align: right;
+    padding-right: .6em;
+    border: 1px solid #556374;
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-radius: 0;
+}
+
+.calendar-week-number:rtl {
+    text-align: left;
+    padding-left: .6em;
+    border: 1px solid #556374;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 0;
+}
+
+.calendar-day {
+    background: #333 url("img/lock-screen-bg.png");
+    border: 1px solid #425265;
+    color: #ccc;
+}
+
+.calendar-today {
+    background: #777 url("img/lock-screen-bg.png");
+}
+
+.calendar-other-month-day {
+    background: transparent !important;
+    color: #999;
+}
+
+.calendar-day-with-events {
+    background: #444 url("img/lock-screen-bg.png");
+}
+
+/* Events */
+
+.events-header-vbox {
+    spacing: 1.2em;
+    padding: .45em 1.5em;
+}
+
+.events-header-hbox {
+    padding-top: .5em;
+}
+
+.events-day-header {
+    font-weight: bold;
+}
+
+.events-day-dayname {
+    color: #999;
+}
+
+.events-day-dayname:ltr {
+    text-align: left;
+}
+
+.events-day-dayname:rtl {
+    text-align: right;
+}
+
+.events-day-time {
+    color: #ccc;
+}
+
+.events-day-time:ltr {
+    text-align: right;
+}
+
+.events-day-time:rtl {
+    text-align: left;
+}
+
+.events-day-task {
+    color: #999;
+}
+
+.events-day-name-box,
+.events-time-box {
+    min-width: 2em;
+}
+
+.events-day-name-box:ltr,
+.events-time-box:ltr {
+    padding-right: .5em;
+}
+
+.events-day-name-box:rtl,
+.events-time-box:rtl {
+    padding-left: .5em;
+}
+
+/* IBus Candidate Popup
+---------------------------------------------*/
+
+.candidate-index {
+    padding: .45em;
+}
+
+.candidate-label {
+    padding: .45em;
+}
+
+.candidate-label:selected {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,0.3);
+}
+
