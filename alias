@@ -12,3 +12,4 @@ alias cp="cp -i"
 alias ut="urxvt"
 alias vi="vim"
 
+alias edit="emacs -nw"
