@@ -1,0 +1,24 @@
+#
+# My local repository to store RPMs I build
+#
+# Usage:
+#	1. yum install createrepo
+#	2. mkdir /opt/fedora/repo/x86_64
+# 	(MUST end with "x86_64" or other ARCH)
+#
+# 	3. copy RPMs to /opt/fedora/repo/x86_64
+# 
+#	4. createrepo --verbose /opt/fedora/repo/x86_64
+#	
+#	5. copy this file to /etc/yum.repos.d/
+#
+#	6. repoquery -q --repoid=fedora-local -a
+#	(check the local packages)
+#
+
+[fedora-local]
+name=Fedora $releasever - Local
+baseurl=file:///opt/fedora/repo/x86_64
+enabled=1
+gpgcheck=0
+

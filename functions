@@ -22,3 +22,45 @@ detect_distro() {
   fi
 }
 
+# blender build helper
+#
+# run this function in the blender source directory
+build_blender () {
+
+    local PREFIX="$HOME/.local"
+
+    mkdir -p build || (echo "Fail to create folder for building! Abort
+    ..."; exit 1)
+
+    pushd ./build
+    
+
+    cmake ../ -DBUILD_SHARED_LIBS:BOOL=OFF \
+	-DWITH_FFTW3:BOOL=ON \
+	-DWITH_JACK:BOOL=ON \
+	-DWITH_CODEC_SNDFILE:BOOL=ON \
+	-DWITH_CODEC_FFMPEG:BOOL=ON \
+	-DWITH_IMAGE_OPENJPEG:BOOL=ON \
+	-DWITH_OPENCOLLADA:BOOL=ON \
+	-DWITH_PYTHON:BOOL=ON \
+	-DWITH_PYTHON_INSTALL:BOOL=ON \
+	-DWITH_GAMEENGINE:BOOL=ON \
+	-DWITH_OPENCOLORIO:BOOL=ON \
+	-DOPENCOLORIO_INCLUDE_DIR:PATH=/usr/include/OpenColorIO \
+	-DWITH_CYCLES:BOOL=ON \
+	-DWITH_OPENIMAGEIO:BOOL=ON \
+	-DOPENIMAGEIO_ROOT_DIR:PATH=/usr \
+	-DWITH_PLAYER:BOOL=ON \
+	-DWITH_INSTALL_PORTABLE:BOOL=OFF \
+	-DWITH_MOD_OCEANSIM:BOOL=ON \
+	-DWITH_LLVM:BOOL=ON \
+	-DPYTHON_VERSION=3.3 \
+	-DPYTHON_LIBPATH=/usr/lib64 \
+	-DPYTHON_LIBRARY=python3.3m \
+	-DPYTHON_INCLUDE_DIRS=/usr/include/python3.3m \
+	-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX}
+
+    make
+
+    popd
+}
