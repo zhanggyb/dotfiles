@@ -36,11 +36,20 @@ FUNCTION ARGUMENTS:
     -s <path>, --source=<path>
         Use a source code path (defaults to '\$SRC').
 
-    -i <path>, --install=<path>
+    -p <path>, --prefix=<path>
         Path where to install blender (defaults to '\$INST').
 
     -b <path>, --build=<path>
         Path to build cmake project. (defaults to '\$BUILDPATH').
+
+    -m, --make
+        Make after cmake configuration
+
+    -i, --install
+        Install after compile
+
+    -c, --clean
+        Delete the temparary build path and return
 
 EOF
 
@@ -53,10 +62,15 @@ function build_blender () {
 
     # copy from blender svn source
     local SRC="./"
-    local INST=".local"
+    local PREFIX=".local"
     local BUILDPATH="./build"	# build dir for cmake
+    local MAKE_AFTER_BUILD=0
+    local INSTALL_AFTER_MAKE=0
+    local CLEAN_BUILD_PATH=0
 
-    local ARGS=`getopt -o "hs:i:b:" -l "help,source:,install:,build:" -n "getopt.sh" -- "$@"`
+    local ARGS=`getopt -o "hs:p:b:mic" -l \
+	"help,source:,prefix:,build:,make,install,clean" \
+	-n "getopt.sh" -- "$@"`
     if [ $? != 0 ]; then echo "Terminating..." >&2; return 1; fi
 
     eval set -- "$ARGS"
@@ -65,18 +79,31 @@ function build_blender () {
 	    -h|--help)
 		print_build_blender_help
 		shift
+		return 0
 		;;
 	    -s|--source)
 		SRC="$2"
 		shift 2
 		;;
-	    -i|--install)
-		INST="$2"
+	    -p|--prefix)
+		PREFIX="$2"
 		shift 2
 		;;
 	    -b|--build)
 		BUILDPATH="$2"
 		shift 2
+		;;
+	    -m|--make)
+		MAKE_AFTER_BUILD=1
+		shift
+		;;
+	    -i|--install)
+		INSTALL_AFTER_MAKE=1
+		shift
+		;;
+	    -c|--clean)
+		CLEAN_BUILD_PATH=1
+		shift
 		;;
 	    --)
 		shift
@@ -92,10 +119,15 @@ function build_blender () {
     # get the absolute path
     SRC=`readlink -f ${SRC}`
     BUILDPATH=`readlink -f ${BUILDPATH}`
-    INST=`readlink -f ${INST}`
+    PREFIX=`readlink -f ${PREFIX}`
 
-    # mkdir -p $BUILDPATH || (echo "Fail to create folder for building! Abort \
-    # ..."; return 1)
+    if [ $CLEAN_BUILD_PATH -ne 0 ]
+    then
+	rm -rf $BUILDPATH
+	return
+    fi
+
+    mkdir -p $BUILDPATH || (echo "Fail to create folder for building! Abort..."; return 1)
 
     pushd $BUILDPATH
 
@@ -122,9 +154,17 @@ function build_blender () {
 	-DPYTHON_LIBPATH=/usr/lib64 \
 	-DPYTHON_LIBRARY=python3.3m \
 	-DPYTHON_INCLUDE_DIRS=/usr/include/python3.3m \
-	-DCMAKE_INSTALL_PREFIX:PATH=${INST}
+	-DCMAKE_INSTALL_PREFIX:PATH=${PREFIX}
 
-    make
+    if [ $MAKE_AFTER_BUILD -ne 0 ];
+    then
+	make
+    fi
+    
+    if [ $MAKE_AFTER_BUILD -ne 0 -a $INSTALL_AFTER_MAKE -ne 0 ];
+    then
+	make install
+    fi
 
     popd
 }
