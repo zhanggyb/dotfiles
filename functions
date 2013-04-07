@@ -62,7 +62,7 @@ function build_blender () {
 
     # copy from blender svn source
     local SRC="./"
-    local PREFIX=".local"
+    local PREFIX="~/.local"
     local BUILDPATH="./build"	# build dir for cmake
     local MAKE_AFTER_BUILD=0
     local INSTALL_AFTER_MAKE=0
