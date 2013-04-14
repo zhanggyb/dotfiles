@@ -19,6 +19,10 @@ detect_distro() {
     DISTRO="SuSE"
   elif [ -f /etc/arch-release ]; then
     DISTRO="ARCH"
+  elif [ -f /etc/os-release ]; then
+      if head -n1 /etc/os-release | grep Ubuntu 1>/dev/null 2>&1; then
+	  DISTRO="Ubuntu"
+      fi
   fi
 }
 
