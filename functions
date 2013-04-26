@@ -8,7 +8,12 @@ DISTRO=""
 #
 detect_distro() {
   if [ -f /etc/debian_version ]; then
-    DISTRO="Debian"
+      if head -n1 /etc/os-release | grep Ubuntu 1>/dev/null 2>&1;
+      then
+	  DISTRO="Ubuntu"
+      else
+	  DISTRO="Debian"
+      fi
   elif [ -f /etc/redhat-release ]; then
     if grep Fedora /etc/redhat-release 1>/dev/null 2>&1; then
       DISTRO="Fedora"
