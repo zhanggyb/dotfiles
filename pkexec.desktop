@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=pkexec /usr/lib/gnome-settings-daemon/gsd-backlight-helper --set-brightness 50
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[zh_CN]=Default Brightness
+Name=Default Brightness
+Comment[zh_CN]=Set the default brightness to 50
+Comment=Set the default brightness to 50

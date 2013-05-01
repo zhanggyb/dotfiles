@@ -25,12 +25,12 @@ fi
 
 cp -f fonts.conf $FONT_CONFIG_DIR
 
-# copy my favorite gnome themes
+# for Intel sharkbay platform, the current kernel cannot restore the brightness level
+# copy this file to $HOME/.config/autostart if using gnome or unity
 
-if [ ! -d ~/.themes ]
+CPU_MODEL=`grep "model name" /proc/cpuinfo | head -n1`
+if echo $CPU_MODEL | grep "Intel.*Core.*-4.*CPU"
 then
-	mkdir -p ~/.themes || (echo "Fail to create ~/.themes! Abort."; exit 1)
+	cp pkexec.desktop $HOME/.config/autostart
 fi
-
-cp -r themes/* ~/.themes
 
