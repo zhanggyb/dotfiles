@@ -9,6 +9,9 @@
 # here, since multilingual X sessions would not work properly if LANG is over-
 # ridden in every subshell.
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 SHELL_CONFIG_DIR=$HOME/.config/shell
 
 # load functions first and check the current distro
@@ -122,3 +125,7 @@ test -s $SHELL_CONFIG_DIR/env_vars && . $SHELL_CONFIG_DIR/env_vars || true
 test -s $SHELL_CONFIG_DIR/alias && . $SHELL_CONFIG_DIR/alias || true
 
 unset DISTRO
+#
+# ~/.bashrc
+#
+

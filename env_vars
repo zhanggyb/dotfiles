@@ -7,15 +7,8 @@ export EDITOR=/usr/bin/vim
 # For some news readers it makes sense to specify the NEWSSERVER variable here
 #export NEWSSERVER=your.news.server
 
-if [ $DISTRO = "Fedora" -o $DISTRO = "Ubuntu" ]
-then
-    if [ -d "$HOME/.local" ]; then
-	APP_DIR=$HOME/.local	# no need to export, is set in Fedora 18
-    fi
-else
-    if [ -d "$HOME/Apps" ]; then
-	APP_DIR=$HOME/Apps
-    fi
+if [ -d "$HOME/.local" ]; then
+	APP_DIR=$HOME/.local
 fi
 
 if [ ! x${APP_DIR} = x ]
@@ -58,3 +51,4 @@ export OOO_FORCE_DESKTOP=gnome
 
 #export PS1="\W \$ "
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\]\W \\$ \[$(tput sgr0)\]"
+
