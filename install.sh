@@ -25,6 +25,8 @@ fi
 
 cp -f fonts.conf $FONT_CONFIG_DIR
 
+cp -f vimrc ~/.vimrc
+
 # for Intel sharkbay platform, the current kernel cannot restore the brightness level
 # copy this file to $HOME/.config/autostart if using gnome or unity
 
