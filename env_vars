@@ -16,23 +16,15 @@ then
 
     PATH=$PATH:${APP_DIR}/bin
     
-    # Sun Java
-    if [ -d "${APP_DIR}/java" ]
-    then
-	JAVA_HOME=${APP_DIR}/java
-	PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH
-    fi
-
     # Chromium
     if [ -d "${APP_DIR}/depot_tools" ]
     then
         PATH=$PATH:${APP_DIR}/depot_tools
     fi
 
-    export JAVA_HOME
     export PATH
-
-    # --- For development ---
+    # For development
+    #
 
     # pkg-config
     export PKG_CONFIG_PATH=${APP_DIR}/lib/pkgconfig:${APP_DIR}/lib64/pkgconfig
@@ -54,14 +46,17 @@ then
     
 fi
 
-# To support Input Method in LibreOffice
+# To support IBus Input Method in LibreOffice
 export OOO_FORCE_DESKTOP=gnome
 
 #export PS1="\W \$ "
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\]\W \\$ \[$(tput sgr0)\]"
 
-# I prefer fcitx
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
+
+# See: https://wiki.archlinux.org/index.php/Java_Fonts_-_Sun_JRE
+export _JAVA_OPTIONS='-Dswing.aatext=TRUE -Dawt.useSystemAAFontSettings=on'
+export JAVA_FONTS=/usr/share/fonts/TTF
 
