@@ -177,3 +177,30 @@ function build_blender () {
 
     popd
 }
+
+
+# checkout the latest blender code from svn trunk
+#
+# Param:
+#   $1 - the dist folder to checkout, 
+#        if not assigned, checkout to the default folder as svn do
+#
+function checkout_blender_svn () {
+
+    if [ $# -eq 0 ]; then
+        # checkout to the default directory
+        svn checkout https://svn.blender.org/svnroot/bf-blender/trunk/blender
+    elif [ $# -eq 1 ]; then
+        # checkout to the assigned directory
+        if svn info $1 1>/dev/null 2>&1; then
+            svn update $1
+        else
+            svn checkout https://svn.blender.org/svnroot/bf-blender/trunk/blender $1
+        fi
+    else
+        echo "Usage:"
+        echo "  ${FUNCNAME[0]} <path>"
+    fi
+
+}
+
