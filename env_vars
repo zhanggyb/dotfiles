@@ -57,6 +57,6 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 
 # See: https://wiki.archlinux.org/index.php/Java_Fonts_-_Sun_JRE
-export _JAVA_OPTIONS='-Dswing.aatext=TRUE -Dawt.useSystemAAFontSettings=on'
-export JAVA_FONTS=/usr/share/fonts/TTF
+#export _JAVA_OPTIONS='-Dswing.aatext=TRUE -Dawt.useSystemAAFontSettings=on'
+#export JAVA_FONTS=/usr/share/fonts/TTF
 
