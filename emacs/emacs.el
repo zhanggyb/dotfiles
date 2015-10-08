@@ -3,6 +3,12 @@
 
 (setq prelude-whitespace nil)
 
+;; js2-mode
+(setq js2-mode-hook
+      '(lambda () (progn
+                    (setq-default js2-basic-offset 2)
+                    (set-variable 'indent-tabs-mode nil))))
+
 ;;; google-c-style:
 
 ;(require 'google-c-style)
