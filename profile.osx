@@ -1,0 +1,33 @@
+# Set coreutils
+#PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+#MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
+# Alias
+#alias ls="ls --color"  # this is for coreutils
+alias ls="ls -G"
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+alias vi=vim
+alias brew="brew -v"
+
+export PS1="\[$(tput bold)\]\[$(tput setaf 2)\]\W \\$ \[$(tput sgr0)\]"
+
+# Cocoapods
+
+function custom_gem_install () {
+    gem install $@ --user-install
+}
+
+export GEM_HOME=$HOME/.gem/ruby/2.0.0
+export PATH=$HOME/Applications/depot_tools:$GEM_HOME/bin:$PATH
+
+# python virtualenv
+#
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+
+# Android Development
+export ANDROID_SDK="~/Library/Android/sdk"
+export ANDROID_NDK="~/Library/Android/ndk"
+export PATH="${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools:${ANDROID_NDK}:${PATH}"
+
