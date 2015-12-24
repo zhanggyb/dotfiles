@@ -2,6 +2,7 @@
 (menu-bar-mode t)
 
 (setq prelude-whitespace nil)
+(setq-default fill-column 80)
 
 ;; js2-mode
 (setq js2-mode-hook
