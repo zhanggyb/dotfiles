@@ -4,11 +4,22 @@
 (setq prelude-whitespace nil)
 (setq-default fill-column 80)
 
-;; js2-mode
+;;; js2-mode
 (setq js2-mode-hook
       '(lambda () (progn
                     (setq-default js2-basic-offset 2)
                     (set-variable 'indent-tabs-mode nil))))
+
+;;; AUCTeX configuration
+
+;; Install AUCTeX In Emacs 24+, Simply do M-x package-list-packages RET, mark
+;; the auctex package for installation with i, and hit x to execute the
+;; installation procedure.
+;;
+;; And follow http://www.gnu.org/software/auctex/manual/auctex.html#Quick-Start:
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
 
 ;;; google-c-style:
 
